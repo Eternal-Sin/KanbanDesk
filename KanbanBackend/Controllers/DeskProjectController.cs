@@ -26,20 +26,20 @@ namespace KanbanBackend.Controllers
         {
             _context.DeskProjects.Add(project);
             _context.SaveChanges();
-            return CreatedAtAction(nameof(Get), new { id = project.id }, project);
+            return CreatedAtAction(nameof(Get), new { id = project.Id }, project);
         }
 
         [HttpPut("{id}")]
         public IActionResult Put(int id, DeskProject updatedProject)
         {
-            var project = _context.DeskProjects.Find(id);
-            if (project == null)
+            var existingProject = _context.DeskProjects.Find(id);
+            if (existingProject == null)
             {
                 return NotFound();
             }
 
-            project.name = updatedProject.name;
-            project.description = updatedProject.description;
+            existingProject.Name = updatedProject.Name;
+            existingProject.Description = updatedProject.Description;
 
             _context.SaveChanges();
             return NoContent();

@@ -5,15 +5,11 @@ namespace KanbanBackend.Models
 {
     public class TaskLog
     {
-        public int id { get; set; }
-
-        public int idTask { get; set; }
-
-        public Task task { get; set; }
-
-        public string action { get; set; }
-
-        public DateTime createAt { get; set; }
+        public int Id { get; set; }
+        public int TaskId { get; set; }
+        public DateTime UpdatedDate { get; set; }
+        public string UpdatedAction { get; set; }
+        public Task Task { get; set; }
     }
 }
 
