@@ -17,158 +17,273 @@ namespace KanbanBackend.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.3")
+                .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("KanbanBackend.Models.Column", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("idProject")
-                        .HasColumnType("int");
-
-                    b.Property<string>("name")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("order")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Order")
                         .HasColumnType("int");
 
-                    b.Property<int>("projectid")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
-                    b.HasIndex("projectid");
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("Columns");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.DeskProject", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("description")
+                    b.Property<int>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
 
                     b.ToTable("DeskProjects");
                 });
 
-            modelBuilder.Entity("KanbanBackend.Models.Task", b =>
+            modelBuilder.Entity("KanbanBackend.Models.Role", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("columnid")
+                    b.Property<string>("RoleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("KanbanBackend.Models.Task", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("createAt")
-                        .HasColumnType("datetime2");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("idColumn")
+                    b.Property<int>("ColumnId")
                         .HasColumnType("int");
 
-                    b.Property<string>("status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("title")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("updateAt")
+                    b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("id");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("columnid");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TaskManagerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ColumnId");
+
+                    b.HasIndex("TaskManagerId");
 
                     b.ToTable("Tasks");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.TaskLog", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("action")
+                    b.Property<int>("TaskId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UpdatedAction")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("createAt")
+                    b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("idTask")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.Property<int>("taskid")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("taskid");
+                    b.HasIndex("TaskId");
 
                     b.ToTable("TaskLogs");
                 });
 
+            modelBuilder.Entity("KanbanBackend.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("KanbanBackend.Models.UserProject", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsCreator")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("UserProjects");
+                });
+
             modelBuilder.Entity("KanbanBackend.Models.Column", b =>
                 {
-                    b.HasOne("KanbanBackend.Models.DeskProject", "project")
+                    b.HasOne("KanbanBackend.Models.DeskProject", "Project")
                         .WithMany("Columns")
-                        .HasForeignKey("projectid")
+                        .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("project");
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("KanbanBackend.Models.DeskProject", b =>
+                {
+                    b.HasOne("KanbanBackend.Models.User", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Creator");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.Task", b =>
                 {
-                    b.HasOne("KanbanBackend.Models.Column", "column")
+                    b.HasOne("KanbanBackend.Models.Column", "Column")
                         .WithMany("Tasks")
-                        .HasForeignKey("columnid")
+                        .HasForeignKey("ColumnId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("column");
+                    b.HasOne("KanbanBackend.Models.User", "TaskManager")
+                        .WithMany("ManagedTasks")
+                        .HasForeignKey("TaskManagerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Column");
+
+                    b.Navigation("TaskManager");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.TaskLog", b =>
                 {
-                    b.HasOne("KanbanBackend.Models.Task", "task")
-                        .WithMany("Logs")
-                        .HasForeignKey("taskid")
+                    b.HasOne("KanbanBackend.Models.Task", "Task")
+                        .WithMany("TaskLogs")
+                        .HasForeignKey("TaskId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("task");
+                    b.Navigation("Task");
+                });
+
+            modelBuilder.Entity("KanbanBackend.Models.User", b =>
+                {
+                    b.HasOne("KanbanBackend.Models.Role", "Role")
+                        .WithMany("Users")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+                });
+
+            modelBuilder.Entity("KanbanBackend.Models.UserProject", b =>
+                {
+                    b.HasOne("KanbanBackend.Models.User", "User")
+                        .WithMany("UserProjects")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KanbanBackend.Models.DeskProject", "Project")
+                        .WithMany("UserProjects")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.Column", b =>
@@ -179,11 +294,25 @@ namespace KanbanBackend.Migrations
             modelBuilder.Entity("KanbanBackend.Models.DeskProject", b =>
                 {
                     b.Navigation("Columns");
+
+                    b.Navigation("UserProjects");
+                });
+
+            modelBuilder.Entity("KanbanBackend.Models.Role", b =>
+                {
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.Task", b =>
                 {
-                    b.Navigation("Logs");
+                    b.Navigation("TaskLogs");
+                });
+
+            modelBuilder.Entity("KanbanBackend.Models.User", b =>
+                {
+                    b.Navigation("ManagedTasks");
+
+                    b.Navigation("UserProjects");
                 });
 #pragma warning restore 612, 618
         }
