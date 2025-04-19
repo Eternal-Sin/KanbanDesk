@@ -5,7 +5,7 @@ namespace KanbanBackend.Data
 {
     public class KanbanContext : DbContext
     {
-        public DbSet<DeskProject> DeskProjects { get; set; }
+        public DbSet<Project> Projects { get; set; }
         public DbSet<Column> Columns { get; set; }
         public DbSet<KanbanBackend.Models.Task> Tasks { get; set; }
         public DbSet<TaskLog> TaskLogs { get; set; }
@@ -25,8 +25,13 @@ namespace KanbanBackend.Data
                 optionsBuilder.UseSqlServer("Server=localhost,1433;Database=KanbanDb;User Id=sa;Password=12345677654321Uu;TrustServerCertificate=True;");
             }
         }
-            protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Role>().HasData(
+                new Role { Id = 1, RoleName = "Admin" },
+                new Role { Id = 2, RoleName = "User" }
+                                               );
             // User -> Role
             modelBuilder.Entity<User>()
                 .HasOne(u => u.Role)
@@ -34,28 +39,28 @@ namespace KanbanBackend.Data
                 .HasForeignKey(u => u.RoleId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            // DeskProject -> User (Creator)
-            modelBuilder.Entity<DeskProject>()
-                .HasOne(dp => dp.Creator)
-                .WithMany() 
-                .HasForeignKey(dp => dp.CreatedBy)
+            // Project -> User (Creator)
+            modelBuilder.Entity<Project>()
+                .HasOne(p => p.Creator)
+                .WithMany(u => u.CreatedProjects)
+                .HasForeignKey(p => p.CreatorId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // UserProject -> User
             modelBuilder.Entity<UserProject>()
                 .HasOne(up => up.User)
                 .WithMany(u => u.UserProjects)
-                .HasForeignKey(up => up.Id) 
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(up => up.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
 
-            // UserProject -> DeskProject
+            // UserProject -> Project
             modelBuilder.Entity<UserProject>()
                 .HasOne(up => up.Project)
                 .WithMany(p => p.UserProjects)
                 .HasForeignKey(up => up.ProjectId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Column -> DeskProject
+            // Column -> Project
             modelBuilder.Entity<Column>()
                 .HasOne(c => c.Project)
                 .WithMany(p => p.Columns)
@@ -69,11 +74,18 @@ namespace KanbanBackend.Data
                 .HasForeignKey(t => t.ColumnId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Task -> User (TaskManager)
+            // Task -> User (Creator)
             modelBuilder.Entity<KanbanBackend.Models.Task>()
-                .HasOne(t => t.TaskManager)
+                .HasOne(t => t.Creator)
+                .WithMany(u => u.CreatedTasks)
+                .HasForeignKey(t => t.CreatorId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Task -> User (Manager)
+            modelBuilder.Entity<KanbanBackend.Models.Task>()
+                .HasOne(t => t.Manager)
                 .WithMany(u => u.ManagedTasks)
-                .HasForeignKey(t => t.TaskManagerId)
+                .HasForeignKey(t => t.ManagerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             // TaskLog -> Task
@@ -84,5 +96,4 @@ namespace KanbanBackend.Data
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
-    
 }

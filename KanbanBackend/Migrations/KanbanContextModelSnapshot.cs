@@ -30,10 +30,6 @@ namespace KanbanBackend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -51,7 +47,7 @@ namespace KanbanBackend.Migrations
                     b.ToTable("Columns");
                 });
 
-            modelBuilder.Entity("KanbanBackend.Models.DeskProject", b =>
+            modelBuilder.Entity("KanbanBackend.Models.Project", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,7 +55,10 @@ namespace KanbanBackend.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CreatedBy")
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CreatorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -72,9 +71,9 @@ namespace KanbanBackend.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatedBy");
+                    b.HasIndex("CreatorId");
 
-                    b.ToTable("DeskProjects");
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.Role", b =>
@@ -92,6 +91,18 @@ namespace KanbanBackend.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RoleName = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            RoleName = "User"
+                        });
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.Task", b =>
@@ -108,16 +119,19 @@ namespace KanbanBackend.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("CreatorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ManagerId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TaskManagerId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedDate")
                         .HasColumnType("datetime2");
@@ -126,7 +140,9 @@ namespace KanbanBackend.Migrations
 
                     b.HasIndex("ColumnId");
 
-                    b.HasIndex("TaskManagerId");
+                    b.HasIndex("CreatorId");
+
+                    b.HasIndex("ManagerId");
 
                     b.ToTable("Tasks");
                 });
@@ -189,24 +205,29 @@ namespace KanbanBackend.Migrations
             modelBuilder.Entity("KanbanBackend.Models.UserProject", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsCreator")
-                        .HasColumnType("bit");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProjectId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("UserProjects");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.Column", b =>
                 {
-                    b.HasOne("KanbanBackend.Models.DeskProject", "Project")
+                    b.HasOne("KanbanBackend.Models.Project", "Project")
                         .WithMany("Columns")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -215,11 +236,11 @@ namespace KanbanBackend.Migrations
                     b.Navigation("Project");
                 });
 
-            modelBuilder.Entity("KanbanBackend.Models.DeskProject", b =>
+            modelBuilder.Entity("KanbanBackend.Models.Project", b =>
                 {
                     b.HasOne("KanbanBackend.Models.User", "Creator")
-                        .WithMany()
-                        .HasForeignKey("CreatedBy")
+                        .WithMany("CreatedProjects")
+                        .HasForeignKey("CreatorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -234,15 +255,22 @@ namespace KanbanBackend.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("KanbanBackend.Models.User", "TaskManager")
-                        .WithMany("ManagedTasks")
-                        .HasForeignKey("TaskManagerId")
+                    b.HasOne("KanbanBackend.Models.User", "Creator")
+                        .WithMany("CreatedTasks")
+                        .HasForeignKey("CreatorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("KanbanBackend.Models.User", "Manager")
+                        .WithMany("ManagedTasks")
+                        .HasForeignKey("ManagerId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
                     b.Navigation("Column");
 
-                    b.Navigation("TaskManager");
+                    b.Navigation("Creator");
+
+                    b.Navigation("Manager");
                 });
 
             modelBuilder.Entity("KanbanBackend.Models.TaskLog", b =>
@@ -269,16 +297,16 @@ namespace KanbanBackend.Migrations
 
             modelBuilder.Entity("KanbanBackend.Models.UserProject", b =>
                 {
-                    b.HasOne("KanbanBackend.Models.User", "User")
-                        .WithMany("UserProjects")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("KanbanBackend.Models.DeskProject", "Project")
+                    b.HasOne("KanbanBackend.Models.Project", "Project")
                         .WithMany("UserProjects")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("KanbanBackend.Models.User", "User")
+                        .WithMany("UserProjects")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Project");
@@ -291,7 +319,7 @@ namespace KanbanBackend.Migrations
                     b.Navigation("Tasks");
                 });
 
-            modelBuilder.Entity("KanbanBackend.Models.DeskProject", b =>
+            modelBuilder.Entity("KanbanBackend.Models.Project", b =>
                 {
                     b.Navigation("Columns");
 
@@ -310,6 +338,10 @@ namespace KanbanBackend.Migrations
 
             modelBuilder.Entity("KanbanBackend.Models.User", b =>
                 {
+                    b.Navigation("CreatedProjects");
+
+                    b.Navigation("CreatedTasks");
+
                     b.Navigation("ManagedTasks");
 
                     b.Navigation("UserProjects");
