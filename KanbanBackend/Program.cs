@@ -48,15 +48,15 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 // CORS (один раз в ConfigureServices)
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-});
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowAll", policy =>
+//    {
+//        policy.AllowAnyOrigin()
+//              .AllowAnyMethod()
+//              .AllowAnyHeader();
+//    });
+//});
 
 // Аутентификация ПОКА ОТКЛЮЧАЕМ ДО НОРМАЛЬНОЙ РЕАЛИЗАЦИИ CRUD 
 
@@ -79,12 +79,12 @@ builder.Services.AddCors(options =>
 
 
 
-builder.Services.AddAuthorization();
+//builder.Services.AddAuthorization();
 
 // Регистрация сервисов
-builder.Services.AddScoped<AuthService>();
+//builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ProjectService>();
-
+builder.Services.AddScoped<ColumnService>();
 var app = builder.Build();
 
 // Порядок middleware КРИТИЧЕН!
