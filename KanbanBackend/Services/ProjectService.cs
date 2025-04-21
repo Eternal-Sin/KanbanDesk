@@ -21,7 +21,7 @@ namespace KanbanBackend.Services
             {
                 Name = dto.Name,
                 Description = dto.Description,
-                CreatorId = userId,
+                CreatorId = userId, // Теперь принимаем явно
                 CreatedDate = DateTime.UtcNow
             };
 
