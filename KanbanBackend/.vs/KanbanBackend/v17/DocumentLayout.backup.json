@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:services\\projectservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,32 +11,64 @@
       "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\dtos\\projects\\projectupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\dtos\\projects\\projectupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\dtos\\projects\\projectcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\dtos\\projects\\projectcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\controllers\\columnscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:controllers\\columnscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\dtos\\columns\\columnupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\dtos\\columns\\columnupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\userproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\userproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\dtos\\projects\\projectresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\dtos\\projects\\projectresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\services\\columnservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:services\\columnservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\data\\kanbancontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:data\\kanbancontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\userproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\userproject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\dtos\\auth\\authresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\models\\tasklog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:models\\column.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|c:\\users\\user\\desktop\\projects_backend\\kanbandesk\\kanbanbackend\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{598EFAED-F653-4E59-334A-ED7E1DBC96A4}|KanbanBackend.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
@@ -78,17 +98,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAFUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T16:27:52.541Z",
               "IsPinned": true,
@@ -96,13 +116,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ProjectsController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Controllers\\ProjectsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProjectsController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Controllers\\ProjectsController.cs",
               "RelativeToolTip": "Controllers\\ProjectsController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBMAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-17T18:27:08.179Z",
               "IsPinned": true,
@@ -110,58 +130,82 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Project.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\Project.cs",
-              "RelativeDocumentMoniker": "Models\\Project.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\Project.cs",
-              "RelativeToolTip": "Models\\Project.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-17T17:55:58.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ProjectService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Services\\ProjectService.cs",
               "RelativeDocumentMoniker": "Services\\ProjectService.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Services\\ProjectService.cs",
               "RelativeToolTip": "Services\\ProjectService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAUwFgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T00:19:10.058Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProjectUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Projects\\ProjectUpdateDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\Projects\\ProjectUpdateDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Projects\\ProjectUpdateDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\Projects\\ProjectUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T21:13:10.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ColumnService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Services\\ColumnService.cs",
+              "RelativeDocumentMoniker": "Services\\ColumnService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Services\\ColumnService.cs",
+              "RelativeToolTip": "Services\\ColumnService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowFcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:17:57.036Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ColumnUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Columns\\ColumnUpdateDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\Columns\\ColumnUpdateDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Columns\\ColumnUpdateDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\Columns\\ColumnUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:18:44.151Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "ColumnsController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Controllers\\ColumnsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ColumnsController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Controllers\\ColumnsController.cs",
+              "RelativeToolTip": "Controllers\\ColumnsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T20:17:09.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ProjectCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Projects\\ProjectCreateDto.cs",
               "RelativeDocumentMoniker": "Models\\DTOs\\Projects\\ProjectCreateDto.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Projects\\ProjectCreateDto.cs",
               "RelativeToolTip": "Models\\DTOs\\Projects\\ProjectCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T11:28:26.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserProject.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\UserProject.cs",
-              "RelativeDocumentMoniker": "Models\\UserProject.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\UserProject.cs",
-              "RelativeToolTip": "Models\\UserProject.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T16:23:33.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -173,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "KanbanContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Data\\KanbanContext.cs",
               "RelativeDocumentMoniker": "Data\\KanbanContext.cs",
@@ -181,23 +225,24 @@
               "RelativeToolTip": "Data\\KanbanContext.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAiwGIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T16:27:21.627Z"
+              "WhenOpened": "2025-04-09T16:27:21.627Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Services\\AuthService.cs",
               "RelativeDocumentMoniker": "Services\\AuthService.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Services\\AuthService.cs",
               "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwFkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-19T00:18:54.994Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -209,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "AuthResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Auth\\AuthResponseDto.cs",
               "RelativeDocumentMoniker": "Models\\DTOs\\Auth\\AuthResponseDto.cs",
@@ -221,7 +266,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwCoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T23:19:14.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "Models\\Project.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\Project.cs",
+              "RelativeToolTip": "Models\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T17:55:58.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserProject.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\UserProject.cs",
+              "RelativeDocumentMoniker": "Models\\UserProject.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\UserProject.cs",
+              "RelativeToolTip": "Models\\UserProject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T16:23:33.056Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProjectResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Projects\\ProjectResponseDto.cs",
+              "RelativeDocumentMoniker": "Models\\DTOs\\Projects\\ProjectResponseDto.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\DTOs\\Projects\\ProjectResponseDto.cs",
+              "RelativeToolTip": "Models\\DTOs\\Projects\\ProjectResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T21:12:56.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "TaskLog.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\TaskLog.cs",
               "RelativeDocumentMoniker": "Models\\TaskLog.cs",
@@ -233,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "Task.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\Task.cs",
               "RelativeDocumentMoniker": "Models\\Task.cs",
@@ -245,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 19,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\Role.cs",
               "RelativeDocumentMoniker": "Models\\Role.cs",
@@ -257,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "Column.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Models\\Column.cs",
               "RelativeDocumentMoniker": "Models\\Column.cs",
@@ -269,19 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAkwCoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T23:19:14.606Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Projects_Backend\\KanbanDesk\\KanbanBackend\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",

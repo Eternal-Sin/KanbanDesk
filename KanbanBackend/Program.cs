@@ -85,6 +85,7 @@ builder.Services.AddSwaggerGen(c =>
 //builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ProjectService>();
 builder.Services.AddScoped<ColumnService>();
+builder.Services.AddScoped<TaskService>();
 var app = builder.Build();
 
 // Ïîğÿäîê middleware ÊĞÈÒÈ×ÅÍ!

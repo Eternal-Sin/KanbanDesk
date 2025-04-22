@@ -121,8 +121,11 @@ namespace KanbanBackend.Services
 
         private static ProjectResponseDto MapToProjectResponseDto(Project project)
         {
-            if (project?.Creator == null)
-                throw new ArgumentNullException(nameof(project), "Project or Creator is null");
+            if (project == null)
+                throw new ArgumentNullException(nameof(project), "Project is null");
+
+            if (project.Creator == null)
+                throw new InvalidOperationException("Project Creator is null");
 
             return new ProjectResponseDto
             {
