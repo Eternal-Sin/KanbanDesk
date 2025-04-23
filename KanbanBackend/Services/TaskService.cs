@@ -10,10 +10,13 @@ namespace KanbanBackend.Services
     public class TaskService
     {
         private readonly KanbanContext _context;
+        private readonly TaskLogService _taskLogService;
+        
 
-        public TaskService(KanbanContext context)
+        public TaskService(KanbanContext context, TaskLogService taskLogService)
         {
             _context = context;
+            _taskLogService = taskLogService;
         }
 
         public async System.Threading.Tasks.Task<TaskResponseDto> CreateTaskAsync(TaskCreateDto dto)
@@ -49,27 +52,51 @@ namespace KanbanBackend.Services
             return MapToDto(task);
         }
 
-        public async System.Threading.Tasks.Task<TaskResponseDto> UpdateTaskAsync(int id, TaskUpdateDto dto)
+        public async Task<TaskResponseDto> UpdateTaskAsync(int id, TaskUpdateDto dto)
         {
-            var task = await _context.Tasks.FindAsync(id);
+            var task = await _context.Tasks
+                .Include(t => t.Creator)
+                .Include(t => t.Manager)
+                .FirstOrDefaultAsync(t => t.Id == id);
+
             if (task == null)
                 throw new KeyNotFoundException($"Task with ID {id} not found");
 
-            if (!string.IsNullOrEmpty(dto.Name))
+            // Логируем изменения
+            var changes = new List<string>();
+
+            if (!string.IsNullOrEmpty(dto.Name) && dto.Name != task.Name)
+            {
+                changes.Add($"Name changed from '{task.Name}' to '{dto.Name}'");
                 task.Name = dto.Name;
+            }
 
-            if (dto.Description != null)
+            if (dto.Description != null && dto.Description != task.Description)
+            {
+                changes.Add("Description updated");
                 task.Description = dto.Description;
+            }
 
-            if (dto.ColumnId.HasValue)
+            if (dto.ColumnId.HasValue && dto.ColumnId.Value != task.ColumnId)
+            {
+                changes.Add($"Moved to column ID {dto.ColumnId.Value}");
                 task.ColumnId = dto.ColumnId.Value;
+            }
 
-            if (dto.ManagerId.HasValue)
-                task.ManagerId = dto.ManagerId;
+            if (dto.ManagerId.HasValue && dto.ManagerId.Value != task.ManagerId)
+            {
+                changes.Add($"Manager changed to user ID {dto.ManagerId.Value}");
+                task.ManagerId = dto.ManagerId.Value;
+            }
 
             task.UpdatedDate = DateTime.UtcNow;
             await _context.SaveChangesAsync();
-            await LoadRelatedData(task);
+
+            // Создаем лог, если были изменения
+            if (changes.Any())
+            {
+                await _taskLogService.CreateTaskLogAsync(task.Id, string.Join("; ", changes));
+            }
 
             return MapToDto(task);
         }

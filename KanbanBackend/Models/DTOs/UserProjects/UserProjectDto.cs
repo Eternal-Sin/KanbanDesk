@@ -1,8 +1,11 @@
-﻿namespace KanbanBackend.Models.DTOs.UserProjects;
+﻿using KanbanBackend.Models.DTOs.Users;
 
-public class UserProjectDto
+namespace KanbanBackend.Models.DTOs.UserProjects
 {
-    public int UserId { get; set; }
-    public int ProjectId { get; set; }
-    public string UserRole { get; set; } // "Creator", "Member" и т.д.
+    public class UserProjectDto
+    {
+        public int UserId { get; set; }
+        public UserDto User { get; set; }
+        public int ProjectId { get; set; }
+    }
 }

@@ -82,10 +82,12 @@ builder.Services.AddSwaggerGen(c =>
 //builder.Services.AddAuthorization();
 
 // Регистрация сервисов
-//builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<ProjectService>();
 builder.Services.AddScoped<ColumnService>();
 builder.Services.AddScoped<TaskService>();
+builder.Services.AddScoped<TaskLogService>();
+builder.Services.AddScoped<UserProjectService>();
 var app = builder.Build();
 
 // Порядок middleware КРИТИЧЕН!

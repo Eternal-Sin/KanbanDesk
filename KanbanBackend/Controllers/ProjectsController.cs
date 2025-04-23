@@ -29,6 +29,32 @@ public class ProjectsController : ControllerBase
         return Ok(project);
     }
 
+    [HttpGet("user/{userId}")]
+    public async Task<ActionResult<List<ProjectResponseDto>>> GetProjectsByUser(int userId)
+    {
+        try
+        {
+            return await _projectService.GetProjectsByUserAsync(userId);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpGet("count")]
+    public async Task<ActionResult<int>> GetProjectCount()
+    {
+        try
+        {
+            return await _projectService.GetProjectCountAsync();
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
     // POST: api/projects
     [HttpPost]
     public async Task<ActionResult<ProjectResponseDto>> CreateProject(

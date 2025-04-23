@@ -118,7 +118,21 @@ namespace KanbanBackend.Services
 
             return result; 
         }
+        public async Task<List<ProjectResponseDto>> GetProjectsByUserAsync(int userId)
+        {
+            return await _context.UserProjects
+                .Where(up => up.UserId == userId)
+                .Include(up => up.Project)
+                .ThenInclude(p => p.Creator)
+                .ThenInclude(c => c.Role)
+                .Select(up => MapToProjectResponseDto(up.Project))
+                .ToListAsync();
+        }
 
+        public async Task<int> GetProjectCountAsync()
+        {
+            return await _context.Projects.CountAsync();
+        }
         private static ProjectResponseDto MapToProjectResponseDto(Project project)
         {
             if (project == null)
