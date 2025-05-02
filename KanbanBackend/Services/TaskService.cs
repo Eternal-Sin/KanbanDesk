@@ -89,6 +89,15 @@ namespace KanbanBackend.Services
                 task.ManagerId = dto.ManagerId.Value;
             }
 
+            if (dto.ColumnId.HasValue && dto.ColumnId.Value != task.ColumnId)
+            {
+                var oldColumn = await _context.Columns.FindAsync(task.ColumnId);
+                var newColumn = await _context.Columns.FindAsync(dto.ColumnId.Value);
+
+                changes.Add($"Status changed from '{oldColumn?.Name}' to '{newColumn?.Name}'");
+                task.ColumnId = dto.ColumnId.Value;
+            }
+
             task.UpdatedDate = DateTime.UtcNow;
             await _context.SaveChangesAsync();
 
@@ -101,6 +110,7 @@ namespace KanbanBackend.Services
             return MapToDto(task);
         }
 
+       
         public async System.Threading.Tasks.Task DeleteTaskAsync(int id)
         {
             var task = await _context.Tasks.FindAsync(id);

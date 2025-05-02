@@ -39,6 +39,7 @@ namespace KanbanBackend.Controllers
             }
         }
 
+
         [HttpGet("{id}")]
         public async Task<ActionResult<TaskResponseDto>> GetTask(int columnId, int id)
         {

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KanbanBackend.Migrations
 {
     [DbContext(typeof(KanbanContext))]
-    [Migration("20250423160747_InitialCreate")]
+    [Migration("20250501191051_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

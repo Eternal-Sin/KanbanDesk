@@ -12,7 +12,7 @@ namespace KanbanBackend.Models
         public DateTime CreatedDate { get; set; }
 
         public DateTime UpdatedDate { get; set; }
-        public User Creator { get; set; }  // Навигация к User
+        public User Creator { get; set; }  
         public ICollection<Column> Columns { get; set; }
         public ICollection<UserProject> UserProjects { get; set; }
     }
